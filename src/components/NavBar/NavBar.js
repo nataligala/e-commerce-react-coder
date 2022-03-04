@@ -10,6 +10,7 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import logo from '../../assets/img_navbar/logo.png';
+import "./NavBar.css";
 
 // props menu
 const pages = ['Productos', 'Precios', 'Sobre Nosotros'];
@@ -29,9 +30,9 @@ export const NavBar = () => {
 
   return (
     <AppBar position="static">
-      <Container maxWidth="xl"
+      <Container maxWidth="xl" className='header'
       //bgcolor NavBar
-      sx={{bgcolor:'#66bb6a'}}
+      // sx={{bgcolor:'#66bb6a'}}
       >
         <Toolbar disableGutters>
           <Typography
