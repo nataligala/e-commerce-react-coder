@@ -35,7 +35,7 @@ export const NavBar = () => {
             sx={{ mr: 50, display: { xs: 'none', md: 'flex' } }}
           >
             {/* Mi Tienda Virtual */}
-            <Avatar alt="logo" src={logo}/>
+            <Avatar alt="logo" src={logo} sx={{ width: 97, height: 97 }}/>
           </Typography>
 
 
@@ -51,6 +51,9 @@ export const NavBar = () => {
               </Button>
             ))}
           </Box>
+
+          <Button variant="contained" sx={{bgcolor: '#95C11F'}}>Tienda</Button>
+
         </Toolbar>
       </Container>
     </AppBar>
