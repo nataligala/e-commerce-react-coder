@@ -8,6 +8,7 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import logo from '../../assets/img_navbar/logo.png';
 import "./NavBar.css";
+import CartWidget from '../CartWidget/CartWidget';
 
 // props menu
 const pages = ['Productos', 'Precios', 'Recetas', 'Sobre Nosotros'];
@@ -41,7 +42,11 @@ export const NavBar = () => {
             ))}
           </Box>
 
-          <Button variant="contained" sx={{bgcolor: '#95C11F'}}>Tienda</Button>
+          {/* <Button variant="contained" sx={{bgcolor: '#95C11F'}}>Tienda</Button> */}
+
+
+          <CartWidget/>
+   
 
         </Toolbar>
       </Container>
