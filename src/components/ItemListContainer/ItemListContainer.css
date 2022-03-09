@@ -1,0 +1,9 @@
+.greeting{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 200px;
+    color: #95C11F;
+    font-family: 'Poppins', sans-serif;
+}

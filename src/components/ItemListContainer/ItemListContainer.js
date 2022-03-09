@@ -1,10 +1,15 @@
-function ItemListContainer(){
+import React from 'react'
+import './ItemListContainer.css';
 
 
-    return(
-        <>
-        </>
-    );
+
+
+export const ItemListContainer = ( {greeting}) => {
+
+    return (
+        <div className='greeting'>
+            <h2>{greeting}</h2>
+            <p>Somos Alimentación Consciente. Somos respeto por los animales. Somos amor por el mundo.</p>    
+        </div>
+    )
 }
-
-export default ItemListContainer;
