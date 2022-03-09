@@ -8,9 +8,10 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import logo from '../../assets/img_navbar/logo.png';
 import "./NavBar.css";
+import CartWidget from '../CartWidget/CartWidget';
 
 // props menu
-const pages = ['Productos', 'Precios', 'Sobre Nosotros', 'Recetas'];
+const pages = ['Productos', 'Precios', 'Recetas', 'Sobre Nosotros'];
 
 //Exporto NavBar
 export const NavBar = () => {
@@ -23,17 +24,10 @@ export const NavBar = () => {
 
   return (
     <AppBar position="static">
-      <Container maxWidth="xl" className='header'
-      //bgcolor NavBar
-      // sx={{bgcolor:'#66bb6a'}}
+      <Container maxWidth="xl" className='header' //bgcolor NavBar // sx={{bgcolor:'#66bb6a'}} 
       >
         <Toolbar disableGutters>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ mr: 50, display: { xs: 'none', md: 'flex' } }}
-          >
+          <Typography variant="h6" noWrap component="div" sx={{ mr: 40, display: { xs: 'none', md: 'flex' } }}>
             {/* Mi Tienda Virtual */}
             <Avatar alt="logo" src={logo} sx={{ width: 97, height: 97 }}/>
           </Typography>
@@ -42,17 +36,17 @@ export const NavBar = () => {
           {/* OPCIONES DE NAVBAR*/}
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
+              <Button key={page} onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block' }}>
                 {page}
               </Button>
             ))}
           </Box>
 
-          <Button variant="contained" sx={{bgcolor: '#95C11F'}}>Tienda</Button>
+          {/* <Button variant="contained" sx={{bgcolor: '#95C11F'}}>Tienda</Button> */}
+
+
+          <CartWidget/>
+   
 
         </Toolbar>
       </Container>
