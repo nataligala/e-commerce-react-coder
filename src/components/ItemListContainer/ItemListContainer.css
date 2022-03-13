@@ -7,3 +7,18 @@
     color: #95C11F;
     font-family: 'Poppins', sans-serif;
 }
+
+
+.itemList__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 345px;
+    text-align: center;
+    color: #FFFFFF;
+    background-color: #A2C037 ;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5em;
+}

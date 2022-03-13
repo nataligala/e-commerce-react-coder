@@ -14,9 +14,11 @@ function App() {
     <div>
       <NavBar />
 
+      <HomeView/>
+
       <ItemListContainer greeting="Bienvenidos a nuestra Tienda Online de Felices las Cows"/>
 
-      <HomeView/>
+      
 
       <Footer/>
 
