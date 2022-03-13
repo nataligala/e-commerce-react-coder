@@ -1,4 +1,4 @@
-.greeting{
+/* .greeting{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -6,8 +6,11 @@
     height: 200px;
     color: #95C11F;
     font-family: 'Poppins', sans-serif;
-}
+} */
 
+.itemList{
+    background-image: url(../../assets/img_itemlistcontainer/BANDA.png);
+}
 
 .itemList__container{
     display: flex;
@@ -15,10 +18,9 @@
     align-items: center;
     flex-direction: column;
     width: 100%;
-    height: 345px;
+    height: 315px;
     text-align: center;
     color: #FFFFFF;
-    background-color: #A2C037 ;
     font-family: 'Poppins', sans-serif;
     font-size: 1.5em;
 }
