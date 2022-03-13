@@ -28,7 +28,7 @@ export const ItemCount = ({stock}) => {
 
 
     return (
-        <Stack spacing={2} direction="row">
+        <Stack spacing={2} direction="row" sx={{margin: '20px'}}>
             <h2>{counter}</h2>
             <Button variant="contained" sx={{bgcolor: '#95C11F'}} onClick={decrementar}>-</Button>
             <Button variant="contained" sx={{bgcolor: '#95C11F'}} onClick={incrementar}>+</Button>

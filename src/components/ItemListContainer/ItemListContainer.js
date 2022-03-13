@@ -14,9 +14,9 @@ export const ItemListContainer = ( {greeting} ) => {
 
     return (
         <section>
-            <div className='greeting'>
+            {/* <div className='greeting'>
                 <h2>{greeting}</h2>    
-            </div>
+            </div> */}
             {/* <label>{count}</label>
             <button onClick={handleCount}>click</button> */}
 
