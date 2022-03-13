@@ -1,17 +1,26 @@
+.homeView{
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    margin: 30px;
+    color: #676767;
+}
+
+.homeView__maintitle{
+    font-size: 40px;
+    color: #333333;
+}
 
 .homeView__container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    height: 345px;
-    text-align: center;
-    color: #FFFFFF;
-    background-color: #A2C037 ;
+    color: #676767;
+    margin: 20px;
+    font-size: 15px;
+}
+.homeView__title{
+    color: #A2C037 ;
     font-family: 'Poppins', sans-serif;
     font-size: 1.5em;
 }
+
 
 .homeView__photo{
     width: 100%;
