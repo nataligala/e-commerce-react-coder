@@ -22,10 +22,13 @@ export const ItemCount = ({stock}) => {
         }
     }
 
-    const respuesta = () =>{
+    //Revisión desafío Contador con Botón
+    const respuesta= () => {
+        if(stock < 1) {
+         alert('no hay stock')
+        }
         alert(`Agregaste ${counter}`);
     }
-
 
     return (
         <Stack spacing={2} direction="row" sx={{margin: '20px'}}>

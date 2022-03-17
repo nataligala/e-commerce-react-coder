@@ -12,7 +12,7 @@ function App() {
   
 
   return (
-    <div>
+    <main>
       <NavBar />
 
       <HomeView/>
@@ -23,7 +23,7 @@ function App() {
 
       <Footer/>
 
-    </div>
+    </main>
   );
 }
 

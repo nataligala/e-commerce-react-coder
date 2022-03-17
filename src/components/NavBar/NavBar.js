@@ -11,7 +11,7 @@ import "./NavBar.css";
 import CartWidget from '../CartWidget/CartWidget';
 
 // props menu
-const pages = ['Productos', 'Precios', 'Recetas', 'Sobre Nosotros'];
+const pages = ['Filosofía', 'Productos', 'Recetas', 'Contacto', 'Prensa'];
 
 //Exporto NavBar
 export const NavBar = () => {
@@ -23,9 +23,8 @@ export const NavBar = () => {
 
 
   return (
-    <AppBar position="static">
-      <Container maxWidth="xl" className='header' //bgcolor NavBar // sx={{bgcolor:'#66bb6a'}} 
-      >
+    <AppBar position="fixed">
+      <Container maxWidth="xl" className='header'>
         <Toolbar disableGutters>
           <Typography variant="h6" noWrap component="div" sx={{ mr: 40, display: { xs: 'none', md: 'flex' } }}>
             {/* Mi Tienda Virtual */}

@@ -1,16 +1,31 @@
 import React from 'react'
+import {useEffect, useState} from 'react'
+import { ItemList } from '../ItemList/ItemList';
 import './ItemListContainer.css';
-import { ItemCount } from '../../components/ItemCount/ItemCount';
+import { pedirDatos } from '../helpers/pedirDatos';
 
 
 
-export const ItemListContainer = ( {greeting} ) => {
+export const ItemListContainer = ( ) => {
 
-    // let count = 0
+    const [loading, setLoading] = useState(false)
+    const [productos, setProductos] = useState([])
 
-    // const handleCount = () =>{
-    //     count = count +1
-    // }
+    useEffect(() => {
+
+        setLoading(true)
+        pedirDatos()
+        .then( (resp)  => {
+            setProductos(resp)
+        })
+        .catch( (error)  => {
+            console.log(error)
+        })
+        .finally( () => {
+            setLoading(false)
+        })
+
+    }, [])
 
     return (
         <section>
@@ -28,7 +43,14 @@ export const ItemListContainer = ( {greeting} ) => {
                 </div>
             </div>
 
-            <ItemCount stock="5" initial="1"/>
+
+            <>
+            {
+                loading
+                    ? <h2>Cargando...</h2>
+                    : <ItemList productos={productos}/>
+            }
+        </>    
                 
         </section>        
     )
