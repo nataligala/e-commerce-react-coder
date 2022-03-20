@@ -2,7 +2,7 @@ import React from 'react'
 import {useEffect, useState} from 'react'
 import { ItemList } from '../ItemList/ItemList';
 import './ItemListContainer.css';
-import { pedirDatos } from '../helpers/pedirDatos';
+import { pedirDatos } from '../../helpers/pedirDatos';
 
 
 
@@ -45,12 +45,12 @@ export const ItemListContainer = ( ) => {
 
 
             <>
-            {
-                loading
-                    ? <h2>Cargando...</h2>
-                    : <ItemList productos={productos}/>
-            }
-        </>    
+                {
+                    loading
+                        ? <h2>Cargando...</h2>
+                        : <ItemList productos={productos}/>
+                }
+            </>    
                 
         </section>        
     )
