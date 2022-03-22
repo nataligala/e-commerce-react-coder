@@ -3,6 +3,7 @@ import {useEffect, useState} from 'react'
 import { ItemList } from '../ItemList/ItemList';
 import './ItemListContainer.css';
 import { pedirDatos } from '../../helpers/pedirDatos';
+import Loader from '../Loader/Loader'
 
 
 
@@ -29,12 +30,6 @@ export const ItemListContainer = ( ) => {
 
     return (
         <section>
-            {/* <div className='greeting'>
-                <h2>{greeting}</h2>    
-            </div> */}
-            {/* <label>{count}</label>
-            <button onClick={handleCount}>click</button> */}
-
             <div className="itemList">
                 <div className="itemList__container">
                     <h2 className="itemList__title">Productos</h2>
@@ -47,7 +42,7 @@ export const ItemListContainer = ( ) => {
             <>
                 {
                     loading
-                        ? <h2>Cargando...</h2>
+                        ? <Loader/>
                         : <ItemList productos={productos}/>
                 }
             </>    

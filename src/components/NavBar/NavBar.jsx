@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
+import Link from '@mui/material/Link';
 import logo from '../../assets/img_navbar/logo.png';
 import "./NavBar.css";
 import CartWidget from '../CartWidget/CartWidget';
@@ -34,18 +35,43 @@ export const NavBar = () => {
 
           {/* OPCIONES DE NAVBAR*/}
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Button key={page} onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block' }}>
-                {page}
-              </Button>
-            ))}
+            <nav>
+                <Button onClick={handleCloseNavMenu} >
+                  <Link href="/filosofia" underline="none" sx={{color: 'white', display: 'block' }}>
+                    Filosofía
+                  </Link>
+                </Button>  
+
+                <Button onClick={handleCloseNavMenu} >
+                  <Link href="/productos" underline="none" sx={{color: 'white', display: 'block' }}>
+                    Productos
+                  </Link>
+                </Button> 
+
+                <Button onClick={handleCloseNavMenu} >
+                  <Link href="/recetas" underline="none" sx={{color: 'white', display: 'block' }}>
+                    Recetas
+                  </Link>
+                </Button>
+
+                <Button onClick={handleCloseNavMenu} >
+                  <Link href="/contacto" underline="none" sx={{color: 'white', display: 'block' }}>
+                    Contacto
+                  </Link>
+                </Button>
+
+                <Button onClick={handleCloseNavMenu} >
+                  <Link href="/prensa" underline="none" sx={{color: 'white', display: 'block' }}>
+                    Prensa
+                  </Link>
+                </Button>
+            </nav>
           </Box>
 
           {/* <Button variant="contained" sx={{bgcolor: '#95C11F'}}>Tienda</Button> */}
-
-
-          <CartWidget/>
-   
+          <Link href="/cart" underline="none" sx={{color: 'white', display: 'block' }}>
+            <CartWidget/>
+          </Link>
 
         </Toolbar>
       </Container>

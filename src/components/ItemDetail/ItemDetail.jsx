@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router';
 import { ItemCount } from '../ItemCount/ItemCount';
 
 
-export const ItemDetail = ({id, name, price, img, alt, category}) => {
+export const ItemDetail = ({id, name, price, img, desc, category}) => {
 
     const navigation = useNavigate()
 
@@ -34,7 +34,12 @@ export const ItemDetail = ({id, name, price, img, alt, category}) => {
           </CardContent>
           <CardContent>
             <Typography gutterBottom variant="h6" component="div">
-              {price}
+              Precio: $ {price}
+            </Typography>
+          </CardContent>
+          <CardContent>
+            <Typography gutterBottom variant="h6" component="div">
+              {desc}
             </Typography>
           </CardContent>
           <CardActions>

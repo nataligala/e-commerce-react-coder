@@ -26,6 +26,7 @@ export const stock = [
         price: 359,
         img: veganesa,
         alt: "Veganesa",
+        desc: "Lorem ipsum",
         category: 'Aderezos'
     },
     {
@@ -34,6 +35,7 @@ export const stock = [
         price: 125,
         img: alfajorDll,
         alt: "Alfajor de Dulce De Leche Sin Tacc",
+        desc: "Lorem ipsum",
         category: 'Alfajores'
     },
     {
@@ -42,6 +44,7 @@ export const stock = [
         price: 564,
         img: nuggets,
         alt: "NUGGETS SABOR POLLO",
+        desc: "Lorem ipsum",
         category: 'Carnes'
     },
     {
@@ -50,6 +53,7 @@ export const stock = [
         price: 564,
         img: bebibleChocolatada,
         alt: "BEBIBLE DE CHOCOLATADA",
+        desc: "Lorem ipsum",
         category: 'Bebibles'
     },
     {
@@ -58,6 +62,7 @@ export const stock = [
         price: 564,
         img: bebibleMaracuya,
         alt: "BEBIBLE DE MARACUYA",
+        desc: "Lorem ipsum",
         category: 'Bebibles'
     },
     {
@@ -66,6 +71,7 @@ export const stock = [
         price: 564,
         img: bebibleVainilla,
         alt: "BEBIBLE DE VAINILLA",
+        desc: "Lorem ipsum",
         category: 'Bebibles'
     },
     {
@@ -74,6 +80,7 @@ export const stock = [
         price: 564,
         img: bebibleFrutosRojos,
         alt: "BEBIBLE DE FRUTOS ROJOS",
+        desc: "Lorem ipsum",
         category: 'Bebibles'
     },
     {
@@ -82,6 +89,7 @@ export const stock = [
         price: 564,
         img: bigClassic,
         alt: "BIG CLASSIC",
+        desc: "Lorem ipsum",
         category: 'Carnes'
     },
     {
@@ -90,6 +98,7 @@ export const stock = [
         price: 564,
         img: alfajorChocolate,
         alt: "ALFAJOR DE CHOCOLATE SIN TACC",
+        desc: "Lorem ipsum",
         category: 'Alfajores'
     },
     {
@@ -98,6 +107,7 @@ export const stock = [
         price: 564,
         img: pizzaMuzza,
         alt: "PIZZA SIN TACC CON MUZZALMENDRA",
+        desc: "Lorem ipsum",
         category: 'Pizzas'
     },
     {
@@ -106,6 +116,7 @@ export const stock = [
         price: 564,
         img: chickenVil,
         alt: "CHICKENVIL PARTY (4 unidades)",
+        desc: "Lorem ipsum",
         category: 'Carnes'
     },
     {
@@ -114,6 +125,7 @@ export const stock = [
         price: 564,
         img: danboEnFetas,
         alt: "DANBO EN FETAS",
+        desc: "Lorem ipsum",
         category: 'Quesos'
     },
     {
@@ -122,6 +134,7 @@ export const stock = [
         price: 564,
         img: alfajorMani,
         alt: "ALFAJOR DE CHOCOLATE, RELLENO CON PASTA DE MANÍ",
+        desc: "Lorem ipsum",
         category: 'Alfajores'
     },
     {
@@ -130,6 +143,7 @@ export const stock = [
         price: 564,
         img: pizzaProvolone,
         alt: "PIZZA PROVOLONE",
+        desc: "Lorem ipsum",
         category: 'Pizzas'
     },
     {
@@ -138,6 +152,7 @@ export const stock = [
         price: 564,
         img: cheddarFetas,
         alt: "CHEDDAR EN FETAS",
+        desc: "Lorem ipsum",
         category: 'Quesos'
     },
     {
@@ -146,6 +161,7 @@ export const stock = [
         price: 564,
         img: karnevilParty,
         alt: "KARNEVIL PARTY (4 unidades)",
+        desc: "Lorem ipsum",
         category: 'Carnes'
     },
     {
@@ -154,6 +170,7 @@ export const stock = [
         price: 564,
         img: postrecitoDll,
         alt: "POSTRECITO DULCE DE LECHE",
+        desc: "Lorem ipsum",
         category: 'Postres'
     },
     {
@@ -162,6 +179,7 @@ export const stock = [
         price: 564,
         img: postrecitoChoco,
         alt: "POSTRECITO CHOCOLATE",
+        desc: "Lorem ipsum",
         category: 'Postres'
     },
     {
@@ -170,6 +188,7 @@ export const stock = [
         price: 564,
         img: fantastiqueFinas,
         alt: "FANTASTIQUE FINAS HIERBAS",
+        desc: "Lorem ipsum",
         category: 'Untables'
     },
     {
@@ -178,6 +197,7 @@ export const stock = [
         price: 564,
         img: fantastiqueTrad,
         alt: "fantastiqueFinas",
+        desc: "Lorem ipsum",
         category: 'Untables'
     },
     
