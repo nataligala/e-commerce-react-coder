@@ -27,7 +27,7 @@ export const stock = [
         img: veganesa,
         alt: "Veganesa",
         desc: "Lorem ipsum",
-        category: 'Aderezos'
+        category: 'aderezos'
     },
     {
         id: 2,
@@ -36,7 +36,7 @@ export const stock = [
         img: alfajorDll,
         alt: "Alfajor de Dulce De Leche Sin Tacc",
         desc: "Lorem ipsum",
-        category: 'Alfajores'
+        category: 'alfajores'
     },
     {
         id: 3,
@@ -45,7 +45,7 @@ export const stock = [
         img: nuggets,
         alt: "NUGGETS SABOR POLLO",
         desc: "Lorem ipsum",
-        category: 'Carnes'
+        category: 'carnes'
     },
     {
         id: 4,
@@ -54,7 +54,7 @@ export const stock = [
         img: bebibleChocolatada,
         alt: "BEBIBLE DE CHOCOLATADA",
         desc: "Lorem ipsum",
-        category: 'Bebibles'
+        category: 'bebibles'
     },
     {
         id: 5,
@@ -63,7 +63,7 @@ export const stock = [
         img: bebibleMaracuya,
         alt: "BEBIBLE DE MARACUYA",
         desc: "Lorem ipsum",
-        category: 'Bebibles'
+        category: 'bebibles'
     },
     {
         id: 6,
@@ -72,7 +72,7 @@ export const stock = [
         img: bebibleVainilla,
         alt: "BEBIBLE DE VAINILLA",
         desc: "Lorem ipsum",
-        category: 'Bebibles'
+        category: 'bebibles'
     },
     {
         id: 7,
@@ -81,7 +81,7 @@ export const stock = [
         img: bebibleFrutosRojos,
         alt: "BEBIBLE DE FRUTOS ROJOS",
         desc: "Lorem ipsum",
-        category: 'Bebibles'
+        category: 'bebibles'
     },
     {
         id: 8,
@@ -90,7 +90,7 @@ export const stock = [
         img: bigClassic,
         alt: "BIG CLASSIC",
         desc: "Lorem ipsum",
-        category: 'Carnes'
+        category: 'carnes'
     },
     {
         id: 9,
@@ -99,7 +99,7 @@ export const stock = [
         img: alfajorChocolate,
         alt: "ALFAJOR DE CHOCOLATE SIN TACC",
         desc: "Lorem ipsum",
-        category: 'Alfajores'
+        category: 'alfajores'
     },
     {
         id: 10,
@@ -108,7 +108,7 @@ export const stock = [
         img: pizzaMuzza,
         alt: "PIZZA SIN TACC CON MUZZALMENDRA",
         desc: "Lorem ipsum",
-        category: 'Pizzas'
+        category: 'pizzas'
     },
     {
         id: 11,
@@ -117,7 +117,7 @@ export const stock = [
         img: chickenVil,
         alt: "CHICKENVIL PARTY (4 unidades)",
         desc: "Lorem ipsum",
-        category: 'Carnes'
+        category: 'carnes'
     },
     {
         id: 12,
@@ -126,7 +126,7 @@ export const stock = [
         img: danboEnFetas,
         alt: "DANBO EN FETAS",
         desc: "Lorem ipsum",
-        category: 'Quesos'
+        category: 'quesos'
     },
     {
         id: 13,
@@ -135,7 +135,7 @@ export const stock = [
         img: alfajorMani,
         alt: "ALFAJOR DE CHOCOLATE, RELLENO CON PASTA DE MANÍ",
         desc: "Lorem ipsum",
-        category: 'Alfajores'
+        category: 'alfajores'
     },
     {
         id: 14,
@@ -144,7 +144,7 @@ export const stock = [
         img: pizzaProvolone,
         alt: "PIZZA PROVOLONE",
         desc: "Lorem ipsum",
-        category: 'Pizzas'
+        category: 'pizzas'
     },
     {
         id: 15,
@@ -153,7 +153,7 @@ export const stock = [
         img: cheddarFetas,
         alt: "CHEDDAR EN FETAS",
         desc: "Lorem ipsum",
-        category: 'Quesos'
+        category: 'quesos'
     },
     {
         id: 16,
@@ -162,7 +162,7 @@ export const stock = [
         img: karnevilParty,
         alt: "KARNEVIL PARTY (4 unidades)",
         desc: "Lorem ipsum",
-        category: 'Carnes'
+        category: 'carnes'
     },
     {
         id: 17,
@@ -171,7 +171,7 @@ export const stock = [
         img: postrecitoDll,
         alt: "POSTRECITO DULCE DE LECHE",
         desc: "Lorem ipsum",
-        category: 'Postres'
+        category: 'postres'
     },
     {
         id: 18,
@@ -180,7 +180,7 @@ export const stock = [
         img: postrecitoChoco,
         alt: "POSTRECITO CHOCOLATE",
         desc: "Lorem ipsum",
-        category: 'Postres'
+        category: 'postres'
     },
     {
         id: 19,
@@ -189,7 +189,7 @@ export const stock = [
         img: fantastiqueFinas,
         alt: "FANTASTIQUE FINAS HIERBAS",
         desc: "Lorem ipsum",
-        category: 'Untables'
+        category: 'untables'
     },
     {
         id: 20,
@@ -198,7 +198,7 @@ export const stock = [
         img: fantastiqueTrad,
         alt: "fantastiqueFinas",
         desc: "Lorem ipsum",
-        category: 'Untables'
+        category: 'untables'
     },
     
 ]

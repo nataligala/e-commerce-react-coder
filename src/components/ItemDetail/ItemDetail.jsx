@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router';
 import { ItemCount } from '../ItemCount/ItemCount';
 
 
-export const ItemDetail = ({id, name, price, img, desc, category}) => {
+export const ItemDetail = ({ id, name, price, img, alt, desc, category }) => {
 
     const navigation = useNavigate()
 
@@ -25,7 +25,7 @@ export const ItemDetail = ({id, name, price, img, desc, category}) => {
 
     return (
       <article>
-        <Card className="cards" key={id} sx={{ maxWidth: 345 }}>
+        <Card>
           <CardMedia component="img" height="auto" src={img} alt={name} />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
@@ -42,6 +42,7 @@ export const ItemDetail = ({id, name, price, img, desc, category}) => {
               {desc}
             </Typography>
           </CardContent>
+
           <CardActions>
             <ItemCount stock="5" initial="1" />
             <Button size="small" onClick={handleVolver}>

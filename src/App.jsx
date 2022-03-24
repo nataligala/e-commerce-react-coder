@@ -1,16 +1,11 @@
 import './App.css';
-import {NavBar} from './components/NavBar/NavBar.jsx';
+import { NavBar } from './components/NavBar/NavBar.jsx';
 import { HomeView } from './components/HomeView/HomeView.jsx';
 import { ItemListContainer } from './components/ItemListContainer/ItemListContainer.jsx';
 import ItemDetailContainer from './components/ItemListContainer/ItemListContainer.jsx';
-import { CartView } from './components/CartView/CartView.jsx';
+import { CartView } from './components/CartView/CartView';
 import {Footer} from './components/Footer/Footer.jsx';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-
-
-
-
-
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 
 function App() {
   
@@ -20,17 +15,20 @@ function App() {
 
       <NavBar />
 
-      {/* <HomeView/> */}
-
       <Routes>
-        <Route path="/filosofia" element={ <HomeView/> } />
-        <Route path="/productos" element={ <ItemListContainer/> } />
-        <Route path="/detail" element={ <ItemDetailContainer/> } />
-        <Route path="/cart" element={ <CartView/> } />
-      </Routes>
-      
-      
+        <Route path="/" element={ <HomeView/> } />
 
+        <Route path="/filosofia" element={ <HomeView/> } />
+
+        <Route path="/productos" element={ <ItemListContainer/> } />
+        <Route path="/productos/:catId" element={ <ItemListContainer/> } />
+
+        <Route path="/item/:id" element={ <ItemDetailContainer/> } />
+
+        <Route path="/cart" element={ <CartView/> } />
+
+        <Route path="*" element={ <Navigate to="/" />  } />
+      </Routes>
       
 
       <Footer/>

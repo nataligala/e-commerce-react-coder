@@ -1,16 +1,18 @@
 import React, {useEffect, useState} from 'react';
-import { useParams } from 'react-router';
-import { pedirDatos } from '../helpers/pedirDatos';
+import { useParams } from 'react-router-dom';
+
+import { pedirDatos } from '../../helpers/pedirDatos';
 import { ItemDetail } from '../ItemDetail/ItemDetail';
 import Loader from '../Loader/Loader';
 
+
+
 export const ItemDetailContainer = () => {
-
-
-    const [item, setItem] = useState()
+ 
     const [loading, setLoading] = useState(false)
+    const [item, setItem] = useState()
 
-    const { itemId } = useParams ()
+    const { id } = useParams()
 
     useEffect(() => {
 
@@ -18,23 +20,22 @@ export const ItemDetailContainer = () => {
 
         pedirDatos()
             .then( resp  => {
-                setItem ( resp.find ( prod => prod.id === Number(itemId))) 
+                setItem ( resp.find( prod => prod.id === Number(id)) )  
+            })
+            .finally( () => {
+                setLoading(false)
             })
 
-        .finally( () => {
-            setLoading(false)
-        })
-
-    }, [itemId])
+    }, [id])
 
 
     return (
         <>
-            {
-                loading
-                    ? <Loader/>
-                    : <ItemDetail {...item}/>
-            }
+                {
+                    loading
+                        ? <Loader/>
+                        : <ItemDetail {...item}/>
+                }
         </>    
     )
 }

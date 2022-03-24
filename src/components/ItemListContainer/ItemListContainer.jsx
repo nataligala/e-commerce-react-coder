@@ -1,23 +1,31 @@
-import React from 'react'
-import {useEffect, useState} from 'react'
+import React, {useEffect, useState} from 'react'
+import { useParams } from 'react-router-dom';
+import { pedirDatos } from '../../helpers/pedirDatos';
 import { ItemList } from '../ItemList/ItemList';
 import './ItemListContainer.css';
-import { pedirDatos } from '../../helpers/pedirDatos';
 import Loader from '../Loader/Loader'
 
 
 
-export const ItemListContainer = ( ) => {
+
+export const ItemListContainer = () => {
 
     const [loading, setLoading] = useState(false)
     const [productos, setProductos] = useState([])
+
+    const { catId } = useParams()
 
     useEffect(() => {
 
         setLoading(true)
         pedirDatos()
         .then( (resp)  => {
-            setProductos(resp)
+            /* Cuando en la URL no haya catID que no pase nada, cuando si haya, que filtre por categoria */
+            if(!catId) {
+                setProductos(resp)
+            }else{
+                setProductos( resp.filter( prod => prod.category === catId))
+            }
         })
         .catch( (error)  => {
             console.log(error)
@@ -26,7 +34,7 @@ export const ItemListContainer = ( ) => {
             setLoading(false)
         })
 
-    }, [])
+    }, [catId])
 
     return (
         <section>
