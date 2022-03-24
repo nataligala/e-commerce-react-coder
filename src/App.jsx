@@ -2,7 +2,7 @@ import './App.css';
 import { NavBar } from './components/NavBar/NavBar.jsx';
 import { HomeView } from './components/HomeView/HomeView.jsx';
 import { ItemListContainer } from './components/ItemListContainer/ItemListContainer.jsx';
-import ItemDetailContainer from './components/ItemListContainer/ItemListContainer.jsx';
+import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
 import { CartView } from './components/CartView/CartView';
 import {Footer} from './components/Footer/Footer.jsx';
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
@@ -23,7 +23,7 @@ function App() {
         <Route path="/productos" element={ <ItemListContainer/> } />
         <Route path="/productos/:catId" element={ <ItemListContainer/> } />
 
-        <Route path="/item/:id" element={ <ItemDetailContainer/> } />
+        <Route path="/detail/:itemId" element={ <ItemDetailContainer/> } />
 
         <Route path="/cart" element={ <CartView/> } />
 

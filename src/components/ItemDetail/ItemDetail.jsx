@@ -24,8 +24,8 @@ export const ItemDetail = ({ id, name, price, img, alt, desc, category }) => {
 
 
     return (
-      <article>
-        <Card>
+      <div>
+        <Card sx={{ maxWidth: 350}}> 
           <CardMedia component="img" height="auto" src={img} alt={name} />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
@@ -55,6 +55,6 @@ export const ItemDetail = ({ id, name, price, img, alt, desc, category }) => {
             </Button>
           </CardActions>
         </Card>
-      </article>
+      </div>
     );
 }
