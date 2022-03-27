@@ -1,7 +1,7 @@
 // import { Container } from "@mui/material"
-import "./HomeView.css";
 import productos from "../../assets/img_homeview/productos.png"
 import { Container } from "@mui/material";
+import "./HomeView.css";
 
 export const HomeView = () => {
     return (
@@ -15,7 +15,7 @@ export const HomeView = () => {
                     con respecto a la alimentación, al cuidado de los animales y sus derechos, a la ecología y cómo se está expandiendo el veganismo
                     en el mundo. Nuestro aporte es claro y fundamental para convertirnos en el cambio que queremos ver. 
                     </p>
-                    <span>Somos Felices Las Vacas. Somos Alimentación Consciente. Somos respeto por los animales. Somos amor por el mundo.</span>
+                    <span className="homeView__slogan">Somos Felices Las Vacas. Somos Alimentación Consciente. Somos respeto por los animales. Somos amor por el mundo.</span>
                 </div>
                 <div className="homeView__container">
                     <h2 className="homeView__title">MISIÓN</h2>

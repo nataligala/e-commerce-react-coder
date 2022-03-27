@@ -22,12 +22,17 @@ import fantastiqueTrad from "../../src/assets/img_productos/fantastique-tradicio
 export const stock = [
     {
         id: 1,
-        name: "Veganesa",
+        name: "VEGANESA",
         price: 359,
         img: veganesa,
         alt: "Veganesa",
-        desc: "Lorem ipsum",
-        category: 'aderezos'
+        weight: "CONT. NETO: 310g",
+        desc: "Aderezo a base de aceite de girasol, sabor mayonesa, libre de gluten, sin tacc.",
+        ingredients: "Agua, aceite de girasol, vinagre blanco, almidón de maíz, ARO: idéntico al natural mayonesa.",
+        traces: "PUEDE CONTENER ALMENDRAS Y CASTAÑAS DE CAJÚ.",
+        glutenfree: "CERTIFICADO SIN TACC.",
+        category: 'aderezos',
+        stock: 15
     },
     {
         id: 2,
@@ -35,8 +40,13 @@ export const stock = [
         price: 125,
         img: alfajorDll,
         alt: "Alfajor de Dulce De Leche Sin Tacc",
-        desc: "Lorem ipsum",
-        category: 'alfajores'
+        weight: "(60gr x unidad)",
+        desc: "Delicioso Alfajor de Dulce de Leche de 60gr. Trae 12 Unidades por caja.",
+        ingredients: "Untable endulzado de almendras sabor dulce de leche*, galletitas dulces sabor vainilla, coco rallado.*(almendras, porotos blancos, agua, proteína de arveja, azúcar, jarabe de glucosa, sal, EST: agar-agar, ARO: dulce de leche).",
+        traces: "CONTIENE ALMENDRAS, DERIVADOS DE SOJA Y SULFITOS. PUEDE CONTENER LECHE, HUEVO, CASTAÑAS DE CAJÚ, NUECES Y MANÍ.",
+        glutenfree: "CERTIFICADO SIN TACC.",
+        category: 'alfajores',
+        stock: 15
     },
     {
         id: 3,
@@ -45,7 +55,8 @@ export const stock = [
         img: nuggets,
         alt: "NUGGETS SABOR POLLO",
         desc: "Lorem ipsum",
-        category: 'carnes'
+        category: 'carnes vegetales',
+        stock: 15
     },
     {
         id: 4,
@@ -54,7 +65,8 @@ export const stock = [
         img: bebibleChocolatada,
         alt: "BEBIBLE DE CHOCOLATADA",
         desc: "Lorem ipsum",
-        category: 'bebibles'
+        category: 'bebibles',
+        stock: 15
     },
     {
         id: 5,
@@ -63,7 +75,8 @@ export const stock = [
         img: bebibleMaracuya,
         alt: "BEBIBLE DE MARACUYA",
         desc: "Lorem ipsum",
-        category: 'bebibles'
+        category: 'bebibles',
+        stock: 15
     },
     {
         id: 6,
@@ -72,7 +85,8 @@ export const stock = [
         img: bebibleVainilla,
         alt: "BEBIBLE DE VAINILLA",
         desc: "Lorem ipsum",
-        category: 'bebibles'
+        category: 'bebibles',
+        stock: 15
     },
     {
         id: 7,
@@ -81,7 +95,8 @@ export const stock = [
         img: bebibleFrutosRojos,
         alt: "BEBIBLE DE FRUTOS ROJOS",
         desc: "Lorem ipsum",
-        category: 'bebibles'
+        category: 'bebibles',
+        stock: 15
     },
     {
         id: 8,
@@ -90,7 +105,8 @@ export const stock = [
         img: bigClassic,
         alt: "BIG CLASSIC",
         desc: "Lorem ipsum",
-        category: 'carnes'
+        category: 'carnes vegetales',
+        stock: 15
     },
     {
         id: 9,
@@ -99,7 +115,8 @@ export const stock = [
         img: alfajorChocolate,
         alt: "ALFAJOR DE CHOCOLATE SIN TACC",
         desc: "Lorem ipsum",
-        category: 'alfajores'
+        category: 'alfajores',
+        stock: 15
     },
     {
         id: 10,
@@ -108,7 +125,8 @@ export const stock = [
         img: pizzaMuzza,
         alt: "PIZZA SIN TACC CON MUZZALMENDRA",
         desc: "Lorem ipsum",
-        category: 'pizzas'
+        category: 'pizzas',
+        stock: 15
     },
     {
         id: 11,
@@ -117,7 +135,8 @@ export const stock = [
         img: chickenVil,
         alt: "CHICKENVIL PARTY (4 unidades)",
         desc: "Lorem ipsum",
-        category: 'carnes'
+        category: 'carnes vegetales',
+        stock: 15
     },
     {
         id: 12,
@@ -126,7 +145,8 @@ export const stock = [
         img: danboEnFetas,
         alt: "DANBO EN FETAS",
         desc: "Lorem ipsum",
-        category: 'quesos'
+        category: 'quesos',
+        stock: 15
     },
     {
         id: 13,
@@ -135,7 +155,8 @@ export const stock = [
         img: alfajorMani,
         alt: "ALFAJOR DE CHOCOLATE, RELLENO CON PASTA DE MANÍ",
         desc: "Lorem ipsum",
-        category: 'alfajores'
+        category: 'alfajores',
+        stock: 15
     },
     {
         id: 14,
@@ -144,7 +165,8 @@ export const stock = [
         img: pizzaProvolone,
         alt: "PIZZA PROVOLONE",
         desc: "Lorem ipsum",
-        category: 'pizzas'
+        category: 'pizzas',
+        stock: 15,
     },
     {
         id: 15,
@@ -153,7 +175,8 @@ export const stock = [
         img: cheddarFetas,
         alt: "CHEDDAR EN FETAS",
         desc: "Lorem ipsum",
-        category: 'quesos'
+        category: 'quesos',
+        stock: 15
     },
     {
         id: 16,
@@ -162,7 +185,8 @@ export const stock = [
         img: karnevilParty,
         alt: "KARNEVIL PARTY (4 unidades)",
         desc: "Lorem ipsum",
-        category: 'carnes'
+        category: 'carnes vegetales',
+        stock: 15
     },
     {
         id: 17,
@@ -171,7 +195,8 @@ export const stock = [
         img: postrecitoDll,
         alt: "POSTRECITO DULCE DE LECHE",
         desc: "Lorem ipsum",
-        category: 'postres'
+        category: 'postres',
+        stock: 15
     },
     {
         id: 18,
@@ -180,7 +205,8 @@ export const stock = [
         img: postrecitoChoco,
         alt: "POSTRECITO CHOCOLATE",
         desc: "Lorem ipsum",
-        category: 'postres'
+        category: 'postres',
+        stock: 15
     },
     {
         id: 19,
@@ -189,7 +215,8 @@ export const stock = [
         img: fantastiqueFinas,
         alt: "FANTASTIQUE FINAS HIERBAS",
         desc: "Lorem ipsum",
-        category: 'untables'
+        category: 'untables',
+        stock: 15
     },
     {
         id: 20,
@@ -198,7 +225,8 @@ export const stock = [
         img: fantastiqueTrad,
         alt: "fantastiqueFinas",
         desc: "Lorem ipsum",
-        category: 'untables'
+        category: 'untables',
+        stock: 15
     },
     
 ]
