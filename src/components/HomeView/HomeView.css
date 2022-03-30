@@ -2,34 +2,29 @@
     text-align: center;
     font-family: 'Poppins', sans-serif;
     padding-top: 100px;
+    font-weight: lighter;
     margin: 30px;
     color: #676767;
 }
 
 .homeView__maintitle{
-    font-size: 31px;
+    font-size: 40px;
     color: #333333;
-    font-weight: 700;
 }
 
 .homeView__container{
     color: #676767;
     margin: 20px;
+    font-size: 15px;
 }
 .homeView__title{
     color: #A2C037 ;
-    font-family: 'Poppins';
+    font-family: 'Poppins', sans-serif;
     font-size: 1.5em;
 }
 
 .homeView__description{
-    font-weight: 300;
-    font-size: 16px;
-}
-
-.homeView__slogan{
-    font-weight: bold;
-    color: #A2C037;
+    font-size: 1em;
 }
 
 .homeView__photo{

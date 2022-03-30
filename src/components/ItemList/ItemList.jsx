@@ -7,7 +7,7 @@ export const ItemList = ( {productos}) => {
     return (
 
       <div>
-            <div style={{ display: 'flex', justifyContent:'center', flexWrap: 'wrap'}}>
+            <div>
                 {productos.map((prod) => <Item key={prod.id} {...prod}/>)}
             </div>
         </div>

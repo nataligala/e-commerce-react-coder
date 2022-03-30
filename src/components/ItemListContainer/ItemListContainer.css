@@ -1,10 +1,18 @@
+/* .greeting{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 200px;
+    color: #95C11F;
+    font-family: 'Poppins', sans-serif;
+} */
 
 .itemList{
     background-image: url(../../assets/img_itemlistcontainer/BANDA.png);
 }
 
 .itemList__container{
-    margin-top: 90px;
     display: flex;
     justify-content: center;
     align-items: center;

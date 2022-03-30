@@ -5,8 +5,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import Menu from '@mui/material/Menu';
+// import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import logo from '../../assets/img_navbar/logo.png';
 import "./NavBar.css";
@@ -14,16 +13,9 @@ import CartWidget from '../CartWidget/CartWidget';
 import { Link } from 'react-router-dom';
 
 
-export const NavBar = () => {
 
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+
+export const NavBar = () => {
 
   return (
     <AppBar position="fixed">
@@ -45,36 +37,9 @@ export const NavBar = () => {
             </Link>
 
             <Link to="productos" style={{ textDecoration: 'none'}}>
-              <MenuItem sx={{ my: 2, color: 'white', display: 'block'}} id="basic-button" aria-controls={open ? 'basic-menu' : undefined} aria-haspopup="true" aria-expanded={open ? 'true' : undefined} onClick={handleClick}>
-                Productos
-                </MenuItem>
-
-                <Menu id="basic-menu" anchorEl={anchorEl} open={open} onClose={handleClose} MenuListProps={{'aria-labelledby': 'basic-button',}}>
-                  <Link to="productos/aderezos">
-                    <MenuItem onClick={handleClose}>Aderezos</MenuItem>
-                  </Link>
-                  <Link to="productos/alfajores">  
-                    <MenuItem onClick={handleClose}>Alfajores</MenuItem>
-                    </Link>
-                    <Link to="productos/bebibles">  
-                      <MenuItem onClick={handleClose}>Bebibles</MenuItem>
-                    </Link>
-                    <Link to="productos/carnesvegetales">
-                      <MenuItem onClick={handleClose}>Carnes Vegetales</MenuItem>
-                    </Link>
-                    <Link to="productos/pizzas">
-                      <MenuItem onClick={handleClose}>Pizzas</MenuItem>
-                    </Link>
-                    <Link to="productos/postres">
-                      <MenuItem onClick={handleClose}>Postres</MenuItem>
-                    </Link>
-                    <Link to="productos/quesos">
-                      <MenuItem onClick={handleClose}>Quesos</MenuItem>
-                    </Link>
-                    <Link to="productos/untables">
-                      <MenuItem onClick={handleClose}>Untables</MenuItem>
-                    </Link>
-                </Menu>
+              <MenuItem sx={{ my: 2, color: 'white', display: 'block'}}>
+              Productos
+              </MenuItem>
             </Link>
 
             <Link to="recetas" style={{ textDecoration: 'none'}}>

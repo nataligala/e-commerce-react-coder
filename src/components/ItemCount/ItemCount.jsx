@@ -1,38 +1,41 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Stack from '@mui/material/Stack';
-import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 
-export const ItemCount = ({stock, setCounter, counter, onAdd}) => {
-    // const [counter, setCounter] = useState(1);
-
-    
-    const decrementar = () => {
-        counter > 0 && setCounter(counter-1);
-    }
+export const ItemCount = ({stock}) => {
+    const [counter, setCounter] = useState(1);
 
     const incrementar = () => {
-        counter < stock && setCounter(counter+1);
+        if(stock>counter){
+            setCounter(counter+1);
+        }else{
+            alert("No hay stock");
+        }
 
     }
 
-    // //Revisión desafío Contador con Botón
-    // const respuesta= () => {
-    //     if(stock < 1) {
-    //      alert('no hay stock')
-    //     }
-    //     alert(`Agregaste ${counter}`);
-    // }
+    const decrementar = () => {
+        if(counter>1) {
+            setCounter(counter-1);
+        }else{
+            alert("Acción no posible");
+        }
+    }
 
-    
+    //Revisión desafío Contador con Botón
+    const respuesta= () => {
+        if(stock < 1) {
+         alert('no hay stock')
+        }
+        alert(`Agregaste ${counter}`);
+    }
+
     return (
         <Stack spacing={2} direction="row" sx={{margin: '20px'}}>
-            <Box sx={{display:'flex', border: '1px solid lightgrey', borderRadius: '5px'}}>
-                <Button onClick={decrementar} sx={{fontWeight: 'bold'}}>-</Button>
-                <h2>{counter}</h2>
-                <Button onClick={incrementar} sx={{fontWeight: 'bold'}}>+</Button>
-            </Box>    
-            <Button variant="contained" sx={{bgcolor: '#056D45', borderRadius: '20px'}} onClick={onAdd}>Agregar al Carrito</Button>
+            <h2>{counter}</h2>
+            <Button variant="contained" sx={{bgcolor: '#95C11F'}} onClick={decrementar}>-</Button>
+            <Button variant="contained" sx={{bgcolor: '#95C11F'}} onClick={incrementar}>+</Button>
+            <Button variant="contained" sx={{bgcolor: '#95C11F'}} onClick={respuesta}>Agregar al Carrito</Button>
         </Stack>
     )
 }
