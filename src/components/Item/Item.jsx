@@ -1,13 +1,11 @@
 import React from 'react';
+import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-// import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
 import Typography from '@mui/material/Typography';
-import { Container } from '@mui/material';
-// import MenuItem from '@mui/material/MenuItem';
 
 
 
@@ -15,28 +13,16 @@ export const Item = ({id, name, price, img, alt, desc, category}) => {
 
 
     return (
-      <Container key={id} style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
-        <Card sx={{ maxWidth: 350}}>
+      <Card key={id} p={1} sx={{ maxWidth: 300, p: 1, m: 1}}>
           <CardMedia component="img" height="auto" src={img} alt={name} />
           <CardContent>
-            <Typography gutterBottom variant="h6" component="div">{name}</Typography>
-          </CardContent>
-          <CardContent>
-            <Typography gutterBottom variant="h6" component="div">Precio: $ {price}</Typography>
-          </CardContent>
-          <CardContent>
-            <Typography gutterBottom variant="h6" component="div">{desc} </Typography>
-          </CardContent>
-          <CardContent>
-            <Typography gutterBottom variant="h6" component="div">{category} </Typography>
-          </CardContent>
-          <CardActions>
-
-          <Link to={`/detail/${id}`}>Ver Más</Link>
-          
-  
-          </CardActions>
-        </Card>
-      </Container>       
+              <Typography gutterBottom variant="h7" component="div" sx={{color: '#95C11F', fontWeight:'bold'}}>{name}</Typography>
+            </CardContent>
+            <CardActions>
+              <Button variant="contained" sx={{bgcolor: '#95C11F', borderRadius: '20px'}}>
+                <Link to={`/detail/${id}`} style={{ textDecoration: 'none', color:'white'}}>Leer Más</Link>
+              </Button>
+            </CardActions>
+        </Card>      
     )
 }

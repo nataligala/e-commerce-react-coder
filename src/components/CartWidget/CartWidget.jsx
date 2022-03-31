@@ -4,7 +4,7 @@ import Link from '@mui/material/Link';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import { MenuItem } from '@mui/material';
 
-export default function CartWidget() {
+export const CartWidget = () => {
 
     
     return (
