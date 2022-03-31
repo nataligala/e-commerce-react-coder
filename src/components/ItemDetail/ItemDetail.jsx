@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Box from '@mui/material/Box';
+import { CartContext } from '../../context/CartContext';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -13,12 +14,13 @@ import { Stack } from '@mui/material';
 
 
 export const ItemDetail = ({ id, name, img, weight, desc, price, ingredients, traces, glutenfree, stock }) => {
+
+  const {addToCart, isInCart } = useContext(CartContext)
   
   const navigate = useNavigate()
 
-  const [counter, setCounter] = useState(1);
+  const [counter, setCounter] = useState(0);
 
-  const [agregado, setAgregado] = useState(false);
 
   const handleVolver = () => {
     navigate(-1)
@@ -33,14 +35,13 @@ export const ItemDetail = ({ id, name, img, weight, desc, price, ingredients, tr
 
     if (counter > 0){
 
-        console.log('Item agregado: ', {
-            id,
+      console.log('Item agregado: ', {
+        
             name,
             price,
+            img,
             counter
         })
-
-        setAgregado(true)
 
     }
 
@@ -79,7 +80,7 @@ export const ItemDetail = ({ id, name, img, weight, desc, price, ingredients, tr
           </Box>
 
           {
-                !agregado
+                !isInCart(id)
                 ?  <ItemCount 
                         stock={stock} 
                         counter={counter} 
