@@ -13,13 +13,15 @@ import { ItemCount } from '../ItemCount/ItemCount';
 import { Stack } from '@mui/material';
 
 
-export const ItemDetail = ({ id, name, img, weight, desc, price, ingredients, traces, glutenfree, stock }) => {
+export const ItemDetail = (item) => {
 
   const {addToCart, isInCart } = useContext(CartContext)
+
+  const { id, name, img, weight, desc, price, ingredients, traces, glutenfree, stock } = item
   
   const navigate = useNavigate()
 
-  const [counter, setCounter] = useState(0);
+  // const [counter, setCounter] = useState(0);
 
 
   const handleVolver = () => {
@@ -31,22 +33,18 @@ export const ItemDetail = ({ id, name, img, weight, desc, price, ingredients, tr
     navigate('/')
   }
 
-  const handleAgregar = () =>{
+  const handleAgregar = (counter) =>{
 
-    if (counter > 0){
+    console.log({counter})
+    
+      addToCart(
+        {  
+          ...item, 
+          'cantidad': counter
+        }
+      )
+  }
 
-      console.log('Item agregado: ', {
-        
-            name,
-            price,
-            img,
-            counter
-        })
-
-    }
-
-
-}
 
 
 
@@ -79,7 +77,13 @@ export const ItemDetail = ({ id, name, img, weight, desc, price, ingredients, tr
               </Box>
           </Box>
 
-          {
+          <ItemCount 
+                        stock={stock} 
+                       
+                        onAdd={handleAgregar}
+                    />
+
+          {/* {
                 !isInCart(id)
                 ?  <ItemCount 
                         stock={stock} 
@@ -91,7 +95,7 @@ export const ItemDetail = ({ id, name, img, weight, desc, price, ingredients, tr
                       <Link to="/cart" style={{ textDecoration: 'none', color: 'white'}}>Terminar mi compra</Link>
                     </Button>  
 
-            }
+            } */}
 
 
           <CardActions sx={{display: 'flex', flexDirection:'column'}}>
