@@ -1,22 +1,14 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 
-export const ItemCount = ({stock, onAdd}) => {
-    const [counter, setCounter] = useState(1);
-
-    const decrementar = () => {
-        if (counter > 1 ) {
-            setCounter(counter - 1);
-        }
-    }
-
+export const ItemCount = ({stock, setCounter, counter, onAdd}) => {
     const incrementar = () => {
-        if (counter < stock) {
-            setCounter(counter + 1);
-        }
-
+        counter < stock && setCounter(counter+1);
+    }
+    const decrementar = () => {
+        counter > 0 && setCounter(counter-1);
     }
 
 

@@ -13,15 +13,14 @@ import { ItemCount } from '../ItemCount/ItemCount';
 import { Stack } from '@mui/material';
 
 
-export const ItemDetail = (item) => {
+export const ItemDetail = ({ id, name, img, weight, desc, price, ingredients, traces, glutenfree, stock }) => {
 
   const {addToCart, isInCart } = useContext(CartContext)
 
-  const { id, name, img, weight, desc, price, ingredients, traces, glutenfree, stock } = item
   
   const navigate = useNavigate()
 
-  // const [counter, setCounter] = useState(0);
+  const [counter, setCounter] = useState(0);
 
 
   const handleVolver = () => {
@@ -33,17 +32,20 @@ export const ItemDetail = (item) => {
     navigate('/')
   }
 
-  const handleAgregar = (counter) =>{
+  const handleAgregar = () =>{
 
-    console.log({counter})
-    
-      addToCart(
-        {  
-          ...item, 
-          'cantidad': counter
-        }
-      )
-  }
+    if (counter > 0){
+
+        addToCart({
+            id,
+            name,
+            price,
+            img,
+            counter
+        })
+    }
+
+}
 
 
 
@@ -73,17 +75,14 @@ export const ItemDetail = (item) => {
                   <Typography gutterBottom component="div">
                     {glutenfree}
                   </Typography>
+                  <Typography gutterBottom component="div">
+                    Precio: $ {price}
+                  </Typography>
                 </CardContent>
               </Box>
           </Box>
 
-          <ItemCount 
-                        stock={stock} 
-                       
-                        onAdd={handleAgregar}
-                    />
-
-          {/* {
+          {
                 !isInCart(id)
                 ?  <ItemCount 
                         stock={stock} 
@@ -95,7 +94,7 @@ export const ItemDetail = (item) => {
                       <Link to="/cart" style={{ textDecoration: 'none', color: 'white'}}>Terminar mi compra</Link>
                     </Button>  
 
-            } */}
+            }
 
 
           <CardActions sx={{display: 'flex', flexDirection:'column'}}>

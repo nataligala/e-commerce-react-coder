@@ -7,20 +7,22 @@ import { CartItem } from '../CartItem/CartItem'
 
 
 export const CartView = () => {
-    const {cart, emptyCart} = useContext(CartContext)
+
+    const {cart, emptyCart, totalCompra} = useContext(CartContext)
 
     return(
-        <Container sx={{ marginTop: '300px'}}>
+        <Container sx={{ marginTop: '150px'}}>
             {
-                cart.length > 0 
 
-                ?   <div>
-                        <section>
+                cart.length > 0 
+                ?   <div style={{ display: 'flex'}}>
+                        <section style={{ display: 'flex', justifyContent:'center', flexWrap: 'wrap'}} >
                             {
-                                cart.map((prod) => <CartItem {...prod} />)
+                                cart.map((prod) => <CartItem key={prod.id} {...prod} />)
                             }
                         </section>
-                        <div>
+                        <div style={{ marginTop: '150px'}}>
+                            <p style={{textAlign: 'center'}}>Total a abonar: ${totalCompra()}</p>
                             <Button variant="contained" sx={{bgcolor: '#95C11F', borderRadius: '20px'}}  onClick={emptyCart}>Vaciar carrito</Button>
                             <Button variant="contained" sx={{bgcolor: '#95C11F', borderRadius: '20px'}}>Terminar mi compra</Button>
                         </div>
@@ -30,9 +32,10 @@ export const CartView = () => {
                         <h2>No agregaste items al carrito aún</h2>
                         <hr/>
                         <Button variant="contained" sx={{bgcolor: '#056D45', borderRadius: '20px', marginLeft: '20px' }} >
-                            <Link to="/" style={{ textDecoration: 'none', color: 'white'}}>Volver</Link>
+                            <Link to="/productos" style={{ textDecoration: 'none', color: 'white'}}>Volver</Link>
                         </Button>  
                     </div>
+
             }
         </Container>
     )
