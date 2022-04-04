@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom';
 import { pedirDatos } from '../../helpers/pedirDatos';
 import { ItemDetail } from '../ItemDetail/ItemDetail'
 import Loader from '../Loader/Loader';
+import { doc, getDoc, collection } from 'firebase/firestore/lite';
+import { db } from '../../firebase/config';
 
 
 
@@ -18,11 +20,17 @@ export const ItemDetailContainer = () => {
 
         setLoading(true)
 
-        pedirDatos()
-            .then( resp  => {
-                setItem ( resp.find( prod => prod.id === Number(itemId)) )  
+        const productosRef = collection(db, 'productos')
+        //metodo doc en vez de collection
+        const docRef = doc(productosRef, itemId)
+        getDoc(docRef)
+            .then((doc) => {
+                setItem({
+                    id: doc.id,
+                    ...doc.data()
+                })
             })
-            .finally( () => {
+            .finally(()=>{
                 setLoading(false)
             })
 

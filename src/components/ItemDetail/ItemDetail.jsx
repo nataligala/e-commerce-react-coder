@@ -66,7 +66,7 @@ export const ItemDetail = ({ id, name, img, weight, desc, price, ingredients, tr
                     {desc}
                   </Typography>
                   <Typography gutterBottom component="div">
-                    <p>Ingredientes</p>
+                    <p style={{fontWeight:'bold'}}>Ingredientes:</p>
                     {ingredients}
                   </Typography>
                   <Typography gutterBottom component="div">

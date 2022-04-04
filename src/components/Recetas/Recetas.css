@@ -1,11 +1,12 @@
 
-.itemList{
+.recetas{
     margin-top: 97px;
-    background-image: url(../../assets/img_itemlistcontainer/BANDA.png);
+    background-image: url(../../assets/img_recetas/banner_recetas.jpeg);
     background-repeat: no-repeat;
+    background-size:cover;
 }
 
-.itemList__container{
+.recetas__container{
     display: flex;
     justify-content: center;
     align-items: center;

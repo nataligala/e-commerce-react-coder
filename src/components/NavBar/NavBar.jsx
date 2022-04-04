@@ -92,7 +92,7 @@ export const NavBar = () => {
               </MenuItem>
             </Link>
           </Box>
-          <Link to="cart">
+          <Link to="cart" style={{ textDecoration: 'none'}}>
             <CartWidget/>
           </Link>  
           {/* <Button variant="contained" sx={{bgcolor: '#95C11F'}}>Tienda</Button> */}

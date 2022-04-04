@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from 'react'
 import { useParams } from 'react-router-dom';
-import { pedirDatos } from '../../helpers/pedirDatos';
 import { ItemList } from '../ItemList/ItemList';
 import './ItemListContainer.css';
 import Loader from '../Loader/Loader'
+import { collection, getDocs, query, where } from 'firebase/firestore/lite';
+import { db } from '../../firebase/config';
 
 
 
@@ -16,23 +17,30 @@ export const ItemListContainer = () => {
     const { catId } = useParams()
 
     useEffect(() => {
-
         setLoading(true)
-        pedirDatos()
-        .then( (resp)  => {
-            /* Cuando en la URL no haya catID que no pase nada, cuando si haya, que filtre por categoria */
-            if(!catId) {
-                setProductos(resp)
-            }else{
-                setProductos( resp.filter( prod => prod.category === catId))
-            }
-        })
-        .catch( (error)  => {
-            console.log(error)
-        })
-        .finally( () => {
-            setLoading(false)
-        })
+
+        // 1.- Armo la referencia a la colección que se quiere consumir
+        // 'productos' es el nombre de la colección
+
+        const productosRef = collection(db, 'productos')
+
+        //Filtros!! . where compara en firebase, no acá
+        const q =  catId ? query(productosRef, where('category', '==', catId)) : productosRef
+        // 2.- GET a esa referencia. Promesa
+        getDocs(q)
+            .then((collection) => {
+                // el metodo collection.docs.map permite obtener un array con los datos cargados en la db
+                // el metodo .data permite verlos como un objeto
+                const productosDb = collection.docs.map((doc) => ({
+                    id: doc.id,
+                    //...doc.data() equivale a que ubique todos los campos que retorna el objeto con formato "name: doc.data().name," etc
+                    ...doc.data()
+                }))
+                setProductos(productosDb)
+            })
+            .finally(() => {
+                setLoading(false)
+            })
 
     }, [catId])
 
