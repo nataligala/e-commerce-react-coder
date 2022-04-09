@@ -15,12 +15,11 @@ import { Stack } from '@mui/material';
 
 export const ItemDetail = ({ id, name, img, weight, desc, price, ingredients, traces, glutenfree, stock }) => {
 
-  const {addToCart, isInCart } = useContext(CartContext)
-
-  
+  const {addToCart } = useContext(CartContext)
+  const [counter, setCounter] = useState(1);
+  const [ isNewProductAdd, setIsNewProductAdd ] = useState(false);
   const navigate = useNavigate()
 
-  const [counter, setCounter] = useState(0);
 
 
   const handleVolver = () => {
@@ -44,6 +43,9 @@ export const ItemDetail = ({ id, name, img, weight, desc, price, ingredients, tr
             counter
         })
     }
+
+    // MODIFICADO
+    setIsNewProductAdd(true);
 
 }
 
@@ -83,18 +85,24 @@ export const ItemDetail = ({ id, name, img, weight, desc, price, ingredients, tr
           </Box>
 
           {
-                !isInCart(id)
-                ?  <ItemCount 
-                        stock={stock} 
-                        counter={counter} 
-                        setCounter={setCounter}
-                        onAdd={handleAgregar}
-                    />
-                :   <Button variant="contained" sx={{bgcolor: '#056D45', borderRadius: '20px', marginLeft: '20px' }} >
-                      <Link to="/cart" style={{ textDecoration: 'none', color: 'white'}}>Terminar mi compra</Link>
-                    </Button>  
+                isNewProductAdd
+                // MODIFICADO
+                ?  
+                
+                  <Button variant="contained" sx={{bgcolor: '#056D45', borderRadius: '20px', marginLeft: '20px' }} >
+                    <Link to="/cart" style={{ textDecoration: 'none', color: 'white'}}>Terminar mi compra</Link>
+                  </Button>  
+                
+                :   
+                  
+                  <ItemCount 
+                    stock={stock} 
+                    counter={counter} 
+                    setCounter={setCounter}
+                    onAdd={handleAgregar}
+                  />
 
-            }
+          }
 
 
           <CardActions sx={{display: 'flex', flexDirection:'column'}}>

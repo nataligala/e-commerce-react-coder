@@ -5,10 +5,15 @@ import Button from '@mui/material/Button';
 
 export const ItemCount = ({stock, setCounter, counter, onAdd}) => {
     const incrementar = () => {
-        counter < stock && setCounter(counter+1);
+        if (counter < stock){
+            setCounter(counter + 1)
+        }
     }
+    
     const decrementar = () => {
-        counter > 0 && setCounter(counter-1);
+        if(counter > 1 ){
+            setCounter(counter - 1)
+        }    
     }
 
 
