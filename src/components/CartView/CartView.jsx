@@ -24,7 +24,7 @@ export const CartView = () => {
                         <div style={{ marginTop: '150px'}}>
                             <p style={{textAlign: 'center'}}>Total a abonar: ${totalCompra()}</p>
                             <Button variant="contained" sx={{bgcolor: '#95C11F', borderRadius: '20px'}}  onClick={emptyCart}>Vaciar carrito</Button>
-                            <Button variant="contained" sx={{bgcolor: '#95C11F', borderRadius: '20px'}}>Terminar mi compra</Button>
+                            <Button variant="contained" sx={{bgcolor: '#95C11F', borderRadius: '20px'}} component={Link} to="/checkout">Iniciar Compra</Button>
                         </div>
                     </div>
 

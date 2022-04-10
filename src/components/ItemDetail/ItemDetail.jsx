@@ -108,10 +108,10 @@ export const ItemDetail = ({ id, name, img, weight, desc, price, ingredients, tr
           <CardActions sx={{display: 'flex', flexDirection:'column'}}>
               <Stack spacing={2} direction="row" sx={{margin: '20px'}}>
                 <Button onClick={handleVolver} variant="outlined" sx={{borderColor: '#056D45', color: '#056D45', borderRadius: '20px'}}>
-                  Volver a Productos
+                  Ver más Productos
                 </Button>
                 <Button variant="outlined" sx={{borderColor: '#056D45', color: '#056D45', borderRadius: '20px'}} onClick={handleVolverInicio}>
-                  Inicio
+                  Volver a Inicio
                 </Button>
               </Stack>
           </CardActions>
