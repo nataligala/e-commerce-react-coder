@@ -15,20 +15,20 @@ export const CartItem = ({name, price, counter, id, img}) => {
 
     return (
 
-        <Card p={1} sx={{ maxWidth: 300, p: 1, m: 1 }}>
-          <CardMedia component="img" height="auto" src={img} alt={name}/>
+        <Card p={1} sx={{ maxWidth: 350, p: 1, m: 1, display: 'flex' }}>
+          <CardMedia component="img" sx={{ maxWidth: 150}} height="auto" src={img} alt={name}/>
           <Box sx={{display: 'flex', flexDirection:'column'}}> 
             <CardContent>
               <Typography gutterBottom variant="h7" component="div" sx={{color: '#95C11F', fontWeight:'bold'}}>{name}</Typography>
               <Typography gutterBottom variant="h7" component="div" sx={{ fontWeight:'bold'}}>Precio: ${price}</Typography>
-              <Typography gutterBottom variant="h7" component="div" sx={{ fontWeight:'bold'}}>Cantidad seleccionada: {counter}</Typography>
+              <Typography gutterBottom variant="h7" component="div" sx={{ fontWeight:'bold'}}>Cantidad: {counter}</Typography>
             </CardContent>
-          </Box>  
             <CardActions>
               <Button variant="contained" sx={{bgcolor: '#95C11F', borderRadius: '20px'}} onClick={() => { removeFromCart(id) }}>
                 <MdDelete/>
               </Button>
             </CardActions>
+          </Box> 
         </Card> 
     )
 }
