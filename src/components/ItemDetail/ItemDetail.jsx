@@ -22,9 +22,9 @@ export const ItemDetail = ({ id, name, img, weight, desc, price, ingredients, tr
 
 
 
-  const handleVolver = () => {
-    navigate(-1)
-  }
+  // const handleVolver = () => {
+  //   navigate(-1)
+  // }
 
   
   const handleVolverInicio = () => {
@@ -59,23 +59,27 @@ export const ItemDetail = ({ id, name, img, weight, desc, price, ingredients, tr
               <Box sx={{display: 'flex', flexDirection:'column'}}>
                 <CardContent>
                   <Typography gutterBottom component="div">
-                    {name}
+                    <p style={{fontWeight:'bold'}}>{name}</p>
                   </Typography>
                   <Typography gutterBottom component="div">
-                    {weight}
+                    Peso neto: {weight}
                   </Typography>
+                  <br></br>
                   <Typography gutterBottom component="div">
                     {desc}
                   </Typography>
+                  <br></br>
                   <Typography gutterBottom component="div">
                     <p style={{fontWeight:'bold'}}>Ingredientes:</p>
                     {ingredients}
                   </Typography>
+                  <br></br>
                   <Typography gutterBottom component="div">
-                    {traces}
+                    <p style={{fontWeight:'bold'}}>{traces}</p>
                   </Typography>
+                  <br></br>
                   <Typography gutterBottom component="div">
-                    {glutenfree}
+                    <p style={{fontWeight:'bold', color: '#95C11F'}}>{glutenfree}</p>
                   </Typography>
                   <Typography gutterBottom component="div">
                     Precio: $ {price}
@@ -90,7 +94,7 @@ export const ItemDetail = ({ id, name, img, weight, desc, price, ingredients, tr
                 ?  
                 
                   <Button variant="contained" sx={{bgcolor: '#056D45', borderRadius: '20px', marginLeft: '20px' }} >
-                    <Link to="/cart" style={{ textDecoration: 'none', color: 'white'}}>Terminar mi compra</Link>
+                    <Link to="/cart" style={{ textDecoration: 'none', color: 'white'}}>Iniciar mi compra</Link>
                   </Button>  
                 
                 :   
@@ -107,7 +111,7 @@ export const ItemDetail = ({ id, name, img, weight, desc, price, ingredients, tr
 
           <CardActions sx={{display: 'flex', flexDirection:'column'}}>
               <Stack spacing={2} direction="row" sx={{margin: '20px'}}>
-                <Button onClick={handleVolver} variant="outlined" sx={{borderColor: '#056D45', color: '#056D45', borderRadius: '20px'}}>
+                <Button component={Link} to="/productos" variant="outlined" sx={{borderColor: '#056D45', color: '#056D45', borderRadius: '20px'}}>
                   Ver más Productos
                 </Button>
                 <Button variant="outlined" sx={{borderColor: '#056D45', color: '#056D45', borderRadius: '20px'}} onClick={handleVolverInicio}>

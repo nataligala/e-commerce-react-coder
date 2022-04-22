@@ -19,8 +19,8 @@ export const Item = ({id, name, price, img, alt, desc, category}) => {
               <Typography gutterBottom variant="h7" component="div" sx={{color: '#95C11F', fontWeight:'bold'}}>{name}</Typography>
             </CardContent>
             <CardActions>
-              <Button variant="contained" sx={{bgcolor: '#95C11F', borderRadius: '20px'}}>
-                <Link to={`/detail/${id}`} style={{ textDecoration: 'none', color:'white'}}>Leer Más</Link>
+              <Button variant="contained" sx={{bgcolor: '#95C11F', borderRadius: '20px'}} component={Link} to={`/detail/${id}`}>
+                Leer Más
               </Button>
             </CardActions>
         </Card>      

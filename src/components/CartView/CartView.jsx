@@ -24,15 +24,15 @@ export const CartView = () => {
                         <div style={{ marginTop: '150px'}}>
                             <p style={{textAlign: 'center'}}>Total a abonar: ${totalCompra()}</p>
                             <Button variant="outlined" sx={{ color: '#95C11F', borderRadius: '20px'}}  onClick={emptyCart}>Vaciar carrito</Button>
-                            <Button variant="contained" sx={{bgcolor: '#95C11F', borderRadius: '20px'}} component={Link} to="/checkout">Iniciar Compra</Button>
+                            <Button variant="contained" sx={{bgcolor: '#95C11F', borderRadius: '20px'}} component={Link} to="/checkout">Terminar Compra</Button>
                         </div>
                     </div>
 
                 :   <div>
                         <h2>No agregaste items al carrito aún</h2>
                         <hr/>
-                        <Button variant="contained" sx={{bgcolor: '#056D45', borderRadius: '20px', marginLeft: '20px' }} >
-                            <Link to="/productos" style={{ textDecoration: 'none', color: 'white'}}>Ver Productos</Link>
+                        <Button variant="contained" sx={{bgcolor: '#056D45', borderRadius: '20px', marginLeft: '20px' }} component={Link} to="/productos">
+                        Ver Productos
                         </Button>  
                     </div>
 

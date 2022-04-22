@@ -9,6 +9,7 @@ import { Footer } from './components/Footer/Footer.jsx';
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import { Recetas } from './components/Recetas/Recetas';
 import { Checkout } from './components/Checkout/Checkout';
+import { Contacto } from './components/Contacto/Contacto';
 
 
 function App() {
@@ -35,6 +36,8 @@ function App() {
           <Route path="/checkout" element={ <Checkout/>} />
 
           <Route path="/recetas" element={ <Recetas/> } />
+
+          <Route path="/contacto" element={ <Contacto/> } />
 
           <Route path="*" element={ <Navigate to="/" />  } />
         </Routes>

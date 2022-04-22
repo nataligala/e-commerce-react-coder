@@ -1,21 +1,45 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
+import { useParams } from 'react-router-dom';
 import './Recetas.css'
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import receta1 from '../../assets/img_recetas/Receta1.png'
-import receta2 from '../../assets/img_recetas/Receta2.png'
-import receta3 from '../../assets/img_recetas/Receta3.png'
-import receta4 from '../../assets/img_recetas/Receta4.png'
-import { Container } from '@mui/material';
+import { RecetasLista } from '../RecetasLista/RecetasLista';
+import Loader from '../Loader/Loader'
+import { collection, getDocs, query, where } from 'firebase/firestore/lite';
+import { db } from '../../firebase/config';
 
 
 export const Recetas = () => {
-    const nombreReceta1 = "EMPANADAS DE PICADA SABOR CARNE"
-    const nombreReceta2 = "MACARONS CON UNTABLE DE ALMENDRAS"
-    const nombreReceta3 = "CHOCOTORTA VEGANA"
-    const nombreReceta4 = "PAPAS RELLENAS"
+
+    const [loading, setLoading] = useState(false)
+    const [recetas, setRecetas] = useState([])
+
+    const { recetaId } = useParams()
+
+    useEffect(() => {
+
+        // 1.- Armo la referencia a la colección que se quiere consumir
+        // 'recetas' es el nombre de la colección
+
+        const recetasRef = collection(db, 'recetas')
+
+        //Filtros!! . where compara en firebase, no acá
+        const q =  recetaId ? query(recetasRef, where('category', '==', recetaId)) : recetasRef
+        // 2.- GET a esa referencia. Promesa
+        getDocs(q)
+            .then((collection) => {
+                // el metodo collection.docs.map permite obtener un array con los datos cargados en la db
+                // el metodo .data permite verlos como un objeto
+                const recetasDb = collection.docs.map((doc) => ({
+                    id: doc.id,
+                    //...doc.data() equivale a que ubique todos los campos que retorna el objeto con formato "name: doc.data().name," etc
+                    ...doc.data()
+                }))
+                setRecetas(recetasDb)
+            })
+            .finally(() => {
+                setLoading(false)
+            })
+
+    }, [recetaId])
 
 
     return (
@@ -26,33 +50,15 @@ export const Recetas = () => {
                     <p className="recetas__description">Nuevas ideas para hacer de tus comidas, platos deliciosos y saludables.</p>
                 </div>
             </div>
-            <Container style={{ display: 'flex', justifyContent:'center', flexWrap: 'wrap', margin: '100px'}}> 
-                <Card p={1} sx={{ maxWidth: 250, p: 1, m: 1}}>
-                    <CardMedia component="img" height="auto" src={receta1} alt={nombreReceta1} sx={{borderRadius: "5px"}}/>
-                    <CardContent>
-                        <Typography gutterBottom variant="h7" component="div" sx={{color: '#95C11F', fontWeight:'bold'}}>{nombreReceta1}</Typography>
-                    </CardContent>
-                </Card>
 
-                <Card p={1} sx={{ maxWidth: 250, p: 1, m: 1}}>
-                    <CardMedia component="img" height="auto" src={receta2} alt={nombreReceta2} sx={{borderRadius: "5px"}}/>
-                    <CardContent>
-                        <Typography gutterBottom variant="h7" component="div" sx={{color: '#95C11F', fontWeight:'bold'}}>{nombreReceta2}</Typography>
-                    </CardContent>
-                </Card>
-                <Card p={1} sx={{ maxWidth: 250, p: 1, m: 1}}>
-                    <CardMedia component="img" height="auto" src={receta3} alt={nombreReceta3} sx={{borderRadius: "5px"}}/>
-                    <CardContent>
-                        <Typography gutterBottom variant="h7" component="div" sx={{color: '#95C11F', fontWeight:'bold'}}>{nombreReceta1}</Typography>
-                    </CardContent>
-                </Card>
-                <Card p={1} sx={{ maxWidth: 250, p: 1, m: 1}}>
-                    <CardMedia component="img" height="auto" src={receta4} alt={nombreReceta4} sx={{borderRadius: "5px"}}/>
-                    <CardContent>
-                        <Typography gutterBottom variant="h7" component="div" sx={{color: '#95C11F', fontWeight:'bold'}}>{nombreReceta4}</Typography>
-                    </CardContent>
-                </Card>
-            </Container>
+            <>
+                {
+                    loading
+                        ? <Loader/>
+                        : <RecetasLista recetas={recetas}/>
+                }
+            </>  
+
         </section>        
     )
 }
